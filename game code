@@ -1,0 +1,342 @@
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public class Yoshimi
+{
+     public static void main (String[] args)
+     {
+     
+     System.out.println("Welcome, Yoshimi, to your epic battle with the pink robots!!");
+     int choice1 = -1;
+     int choice2 = -1;
+     int choice3 = -1;
+     int strength = 0;
+     int Attack = 0; 
+     int lanosLife = 100;
+     int taygarLife = 500;
+     int vambinoLife = 1000;
+     int aimAndFire = 0;
+     int swings = 0;
+     int Ag = 0;
+     int B12 = 1;
+     int C = 2;
+     int D3 = 3;
+     int K = 4;
+     int B6 = 5;
+     int B2 = 6;
+     int Niacin = 7;
+     int E = 8;
+     int Magnesium = 9;
+     int Calcium = 10;
+     int Manganese = 11;
+     int Zinc = 12;
+     int Guarana = 13;
+     int Ginseng = 14;
+     int Ginko = 15;
+     int Ashwaghanda = 16;
+     int Elderberry = 17;
+     int SpanBlackRadish = 18;
+     int Chromium = 19;
+     int Selenium = 20;
+     int Iodine = 21;
+     int Turmeric= 22;
+     int Iron = 23;
+     int A = 24;
+     int Copper = 25;
+     int Molybdenum = 26;
+
+     
+     //Scanner scan = new Scanner(System.in);      
+     int [] Vitamins;
+     Vitamins = new int [26];
+     
+     Vitamins[Ag] = 50;
+     Vitamins[B12] = 30;
+     Vitamins[C] = 25;
+     Vitamins[D3] = 15;
+     Vitamins[K] = 28;
+     Vitamins[B6] = 20;
+     Vitamins[B2] = 25;
+     Vitamins[Niacin] = 15;
+     Vitamins[E] = 10;
+     Vitamins[Magnesium] = 18;
+     Vitamins[Calcium] = 28;
+     Vitamins[Manganese] = 15;
+     Vitamins[Zinc] = 17;
+     Vitamins[Guarana] = 25;
+     Vitamins[Ginseng] = 37;
+     Vitamins[Ginko] = 24;
+     Vitamins[Ashwaghanda] = 47;
+     Vitamins[Elderberry] = 19;
+     Vitamins[SpanBlackRadish] = 7;
+     Vitamins[Chromium] = 40;
+     Vitamins[Selenium] = 41;
+     Vitamins[Iodine] = 23;
+     Vitamins[Turmeric] = 22;
+     Vitamins[Iron] = 45;
+     Vitamins[A] = 34;
+     Vitamins[Copper] = 27;
+     
+     String vitaminList = "0-Ag, 1-B12, 2-C, 3- D3, 4- K, 5- B6, 6- B2, 7- Niacin, 8- E, 9- Magnesium, 10- Calcium, 11- Manganese, 12- Zinc, 13- Guarana, 14-Ginseng, 15-Ginko, 16- Ashwaghanda, \n 17- Elderberry, 18- Spanish Black Radish, 19- Chromium, 20- Selenium, 21- Iodine, 22- Turmeric, 23- Iron, 24- A, 25- Copper.";
+     int SIDES = Molybdenum;   // how many sides on the die?
+      
+      // roll should be 1 through SIDES
+      int roll = (int) (Math.random() * SIDES) + 1;
+     
+     System.out.println(roll); 
+      // print result
+      //try and make this a class that is referenceable so I can hide the code which describes the values of the Vitamins.
+     if (roll < 26)
+     {
+     System.out.println("The Pink Robot Lamos will be your opponent, good luck!");
+     System.out.println("make sure to take your vitamins.");
+     
+     System.out.println("The vitamins you take will determine your strength in the fight." );
+     
+
+     
+     System.out.println("Choose your vitamins from the list by typing their corresponding number when prompted. You can take three for this fight.");
+
+     Scanner jerry = new Scanner(System.in);
+     System.out.print("Enter your first choice --->");
+     JOptionPane.showMessageDialog(null,vitaminList);
+     choice1 = jerry.nextInt();
+     System.out.print("Enter your second choice --->");
+     JOptionPane.showMessageDialog(null,vitaminList);
+     choice2 = jerry.nextInt();
+     System.out.print("Enter your third choice --->");
+     JOptionPane.showMessageDialog(null,vitaminList);
+     choice3 = jerry.nextInt();
+     
+     strength = Vitamins[choice1] + Vitamins[choice2] + Vitamins[choice3];
+     }
+     System.out.println("Now that you have taken your vitamins, the Fight Begins!!\n\n");
+     while (lanosLife > 0)
+     {
+     if (strength == 47)
+     {
+      System.out.println("You figured out your true power!");
+      Attack += 13;
+     }
+     if (strength == 55)
+     {
+      System.out.println("You have reached your awesome potential");
+      Attack += 10;
+     }
+     if (strength >= 50)
+       {
+     System.out.println("Nice Choices! you get an extra strength boost for the fight.");
+
+     Attack += 3;
+       }
+     if (strength >= 70)
+      {
+     System.out.println("Wow! Great Choices, you get an extra powerful additional strength boost for the fight.");
+     Attack += 5;
+       } 
+     if (strength < 20)
+     {
+     System.out.println("You are feeling light on your feet! your agility will benefit");
+     Attack += 2;
+     }
+     else if (strength < 40)
+     {
+     System.out.println("You learned where the robots weak spots are, Nice!");
+     Attack += 1;
+     }
+     roll = 0;  
+     roll = (int) (Math.random() * SIDES) + 1;
+     Attack += roll;
+     lanosLife -= Attack;
+     Attack = 0;
+     swings +=1;
+     
+     }//while
+      if (swings > 6)
+      {
+     System.out.println("What a fight! Unfortunately for you, Lamos Won!");
+      }
+   
+      else if (swings <= 6)
+         {
+     System.out.println("It took you " + swings + " mighty swings to defeat Lanos the Pink Robot, Good Job!"); 
+
+     System.out.println("Weary but enraptured in the heroism of your actions, you move on to your next challenge.");
+     System.out.println("Take what vitamins you need as the hour of action approaches.");
+     Scanner jerry = new Scanner(System.in);
+     System.out.print("Enter your first choice --->");
+     JOptionPane.showMessageDialog(null,vitaminList);
+     choice1 = jerry.nextInt();
+     System.out.print("Enter your second choice --->");
+     JOptionPane.showMessageDialog(null,vitaminList);
+     choice2 = jerry.nextInt();
+     System.out.print("Enter your third choice --->");
+     JOptionPane.showMessageDialog(null,vitaminList);
+     choice3 = jerry.nextInt();
+     
+     strength += Vitamins[choice1] + Vitamins[choice2] + Vitamins[choice3] - swings - swings - swings; 
+     
+     System.out.println("Wow! your strength has grown to " + strength );
+     
+     System.out.println("&&(this means enter a number to continue):");
+         
+     System.out.println("Taygar shows its beastly form, sillouetted by a burning hot sun. You have taken your Vitamins, now it's time to fight!");
+     swings = 0;
+     while (taygarLife > 0)
+     {
+     System.out.println("low blow: 1, mid rift: 2; high reach 3;");
+     SIDES = Ginko;
+     
+     aimAndFire = jerry.nextInt();
+     
+     System.out.println("Roll to see if your shot will connect! Press 2 to roll");
+     roll = jerry.nextInt();
+     
+     roll = (int) (Math.random() * SIDES) + 1;
+     System.out.println("You rolled a " + roll);
+     if (aimAndFire == 1)
+     {
+      if (roll <= 5)
+      {
+      System.out.println("That's a Low Blow!! Nice Shot");
+      Attack += strength;
+      }
+     }
+     if (aimAndFire == 2)
+       if ( roll < 11)
+       {
+      {
+      System.out.println("Good, safe, mid range shot!! Keep it up");
+      Attack += strength/2;
+      }
+       }
+     if (aimAndFire == 3)
+     { 
+      if (roll > 12)
+      {
+      System.out.println("You connected, on the dome!! Way to fight.");
+      Attack += strength*2;
+      }
+     }
+     if (roll == 11)
+     {
+     System.out.println("How did you do that!!");
+     Attack = strength/2;
+     }
+     if (roll == 12)
+     {
+     System.out.println("Wow, can't believe that worked!! Nice attack");
+     Attack += 57;
+     }
+     else if (Attack == 0)
+     {
+     System.out.println("Your attack missed its mark! Too bad, it was so powerful!");
+     }
+      taygarLife -= Attack;
+      swings += 1;
+      Attack = 0;
+      }//Taygar Fight
+      
+      if (swings > 8)
+      {
+      System.out.println("You fought hard but have been defeated by the terrible Taygar!!");
+      }
+      else if (swings <= 8)
+      {
+      System.out.println("Wow, you miraculously defeated Taygar the Terrible.");
+      
+      System.out.println("Rest up and prepare for your next battle, it will be the hardest one yet!");
+      Attack = 0;
+      System.out.println("You will need to take your vitamins, maybe try the Ashwaghanda");
+      
+     System.out.print("Enter your first choice --->");
+     JOptionPane.showMessageDialog(null,vitaminList);
+     choice1 = jerry.nextInt();
+     System.out.print("Enter your second choice --->");
+     JOptionPane.showMessageDialog(null,vitaminList);
+     choice2 = jerry.nextInt();
+     System.out.print("Enter your third choice --->");
+     JOptionPane.showMessageDialog(null,vitaminList);
+     choice3 = jerry.nextInt();
+     
+      strength += Vitamins[choice1] + Vitamins[choice2] + Vitamins[choice3] - swings - swings - swings;
+      
+      System.out.println("Wow, your strength has grown to a monsterous " + strength + "you are ready for your fight.");
+      
+      System.out.println("The all powerful Vambino is approaching! Do you run? NO!! It's the final battle and you have to be strong.");
+      swings = 0;
+      while (vambinoLife > 0)
+     {
+     System.out.println("low blow: 1, mid rift: 2; high reach 3;");
+     SIDES = Ginko;
+     
+     aimAndFire = jerry.nextInt();
+     
+     System.out.println("Roll to see if your shot will connect! Press 2 to roll");
+     roll = jerry.nextInt();
+     
+     roll = (int) (Math.random() * SIDES) + 1;
+     System.out.println("You rolled a " + roll);
+     if (aimAndFire == 1)
+     {
+     if (roll == 1)
+     {
+     System.out.println("Vambino steps on you!");
+     vambinoLife += 300;
+     }
+      else if (roll <= 5)
+      {
+      System.out.println("That's a Low Blow!! Nice Shot");
+      Attack += strength;
+      
+      }
+     }
+     if (aimAndFire == 2)
+       if ( roll < 11)
+       {
+      {
+      System.out.println("Good, safe, mid range shot!! Keep it up");
+      Attack += strength/2;
+      }
+       }
+     if (aimAndFire == 3)
+     { 
+      if (roll > 12)
+      {
+      System.out.println("You connected, on the dome!! Way to fight.");
+      Attack += strength*2;
+      }
+     }
+     if (roll == 11)
+     {
+     System.out.println("Oh no!!, Vambino took the energy from your attack to heal his wounds!!");
+     vambinoLife += 100;
+     }
+     if (roll == 12)
+     {
+     System.out.println("Wow, can't believe that worked!! Nice attack");
+     Attack += 57;
+     }
+     else if (Attack == 0)
+     {
+     System.out.println("Your attack missed its mark! Too bad, it was so powerful!");
+     }
+      vambinoLife -= Attack;
+      swings += 1;
+      Attack = 0;
+      }//Vambino While
+      if (swings > 10)
+      {
+      System.out.println("Way to go, you made it to the last robot, but you were defeated by the allmighty Vambino.");
+      }
+      else if (swings <= 10)
+      {
+      System.out.println(" Congratulations!!! You defeated those evil robots. Ohh Yoshimi, you'd better believe it, you are truly the best.");
+      }//Victory over Vambino
+      }//Victory over Taygar
+         }//Victory over Lamos
+System.out.println("That concludes this episode of Yoshimi battles the Pink Robots! Keep fighting!");
+
+}
+
+}
